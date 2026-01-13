@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Colorear: Águila Coronada - ECO de América</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root { --texto: #333333; --verde: #228b3c; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #e5e5e5; }
+        .page-container { width: 210mm; height: 297mm; background: white; margin: 20px auto; padding: 15mm; display: flex; flex-direction: column; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 20px; }
+        h1 { font-family: 'Poppins', sans-serif; font-size: 32pt; text-transform: uppercase; color: black; letter-spacing: 2px; margin-bottom: 5px; }
+        .sub-title { font-size: 14pt; color: #666; font-style: italic; }
+        .drawing-area { flex-grow: 1; border: 3px solid black; border-radius: 10px; margin: 10px 0; position: relative; display: flex; align-items: center; justify-content: center; background-color: white; overflow: hidden; }
+        .drawing-area img { max-width: 95%; max-height: 95%; object-fit: contain; }
+        .image-placeholder { display: none; }
+        .fact-box { margin-top: 20px; padding: 15px; border-top: 2px solid black; text-align: center; }
+        .fact-box p { font-size: 14pt; line-height: 1.4; }
+        .footer { margin-top: 10px; text-align: right; font-size: 10pt; color: #666; font-weight: 600; }
+        @media print { body { background: white; } .page-container { margin: 0; box-shadow: none; border: none; } @page { size: A4; margin: 0; } }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1>Águila Coronada</h1>
+            <div class="sub-title">La reina del monte chaqueño</div>
+        </div>
+        <div class="drawing-area">
+            <img src="aguila-coronada.png" alt="Águila Coronada para colorear">
+        </div>
+        <div class="fact-box">
+            <p><strong>¿Sabías qué?</strong> El Águila Coronada ayuda mucho a los campos porque come víboras y ratones. ¡Es una gran guardiana!</p>
+        </div>
+        <div class="footer">ECO de América - Serie Fauna Argentina</div>
+    </div>
+</body>
+</html>

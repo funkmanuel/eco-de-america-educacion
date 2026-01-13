@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Educativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --verde-principal: #228b3c; --verde-claro: #3db85c; --verde-oscuro: #1a6b2f; --fondo-arena: #f5f1e8; --azul-secundario: #5ba3d0; --texto: #333333; --gris-claro: #6b7280; --nt: #3b82f6; --font-titulo: 'Poppins', sans-serif; --font-texto: 'Inter', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-texto); color: var(--texto); background-color: #e5e5e5; line-height: 1.5; }
+        .page-container { width: 210mm; margin: 20px auto; background: white; }
+        .page { width: 210mm; height: 297mm; padding: 15mm; position: relative; background-color: white; overflow: hidden; display: flex; flex-direction: column; page-break-after: always; }
+        header { border-bottom: 4px solid var(--verde-principal); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+        h1 { font-family: var(--font-titulo); font-size: 32pt; color: var(--verde-principal); line-height: 1; text-transform: uppercase; }
+        .subtitle { font-size: 14pt; font-style: italic; color: var(--gris-claro); margin-top: 5px; }
+        .badge { background-color: var(--nt); color: white; padding: 8px 16px; border-radius: 20px; font-family: var(--font-titulo); font-weight: 700; font-size: 10pt; text-transform: uppercase; }
+        section { margin-bottom: 20px; }
+        h2 { font-family: var(--font-titulo); color: var(--verde-oscuro); font-size: 16pt; border-left: 5px solid var(--verde-claro); padding-left: 10px; margin-bottom: 12px; text-transform: uppercase; }
+        p { margin-bottom: 10px; font-size: 10.5pt; text-align: justify; }
+        .stat-item strong { display: block; color: var(--verde-principal); font-size: 9pt; text-transform: uppercase; }
+        .stat-item span { font-weight: 600; font-size: 11pt; }
+        .fun-fact { background-color: #e0f2fe; border-left: 5px solid var(--azul-secundario); padding: 15px; border-radius: 0 10px 10px 0; }
+        .fun-fact h3 { color: var(--azul-secundario); font-family: var(--font-titulo); font-size: 12pt; margin-bottom: 5px; }
+        .threats-list li { margin-bottom: 8px; padding-left: 20px; position: relative; font-size: 10.5pt; }
+        .threats-list li::before { content: "•"; color: var(--nt); font-weight: bold; position: absolute; left: 0; }
+        footer { margin-top: auto; text-align: center; font-size: 9pt; color: var(--verde-principal); border-top: 1px solid #ddd; padding-top: 10px; }
+        @media print { body { background: white; } .page-container { width: 100%; margin: 0; } .page { margin: 0; page-break-after: always; height: 297mm; padding: 15mm; } }
+    </style>
+</head>
+<body>
+<div class="page-container">
+    
+    <div class="page">
+        <header>
+            <div>
+                <h1>Oso Hormiguero Gigante</h1>
+                <div class="subtitle">Myrmecophaga tridactyla</div>
+            </div>
+            <div class="badge">VULNERABLE (VU)</div>
+        </header>
+        
+        <!-- TOP GRID: Imagen Vertical + Descripción -->
+        <div style="display: grid; grid-template-columns: 40% 56%; gap: 4%; margin-bottom: 20px; align-items: start;">
+            <!-- Columna Izquierda: Imagen -->
+            <div style="width: 100%; height: 105mm; border: 3px solid var(--verde-principal); border-radius: 12px; overflow: hidden; background: #f5f1e8; display: flex; align-items: center; justify-content: center;">
+                <img src="../img/realistas/oso-hormiguero-principal.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Fauna" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            </div>
+
+            <!-- Columna Derecha: Descripción -->
+            <div>
+                <section>
+                    <h2 style="margin-top:0;">Descripción</h2>
+                    
+            <p>También conocido como "Yurummí" (boca chica en guaraní), es uno de los mamíferos más extraños y fascinantes. Posee un hocico largo y tubular desprovisto de dientes, y una lengua pegajosa de hasta 60 cm de largo que usa para capturar insectos.</p>
+            <p>Sus patas delanteras tienen garras poderosas y curvas que utiliza para romper hormigueros duros como el concreto y para defenderse. Camina sobre los nudillos para proteger el filo de estas garras. Su cola es enorme y peluda, parecida a una bandera o abanico.</p>
+        
+                </section>
+            </div>
+        </div>
+
+        <!-- DATOS TÉCNICOS (Full Width) -->
+        <section>
+            <h2>Datos Técnicos</h2>
+            <div class="stats-box" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; background-color: var(--fondo-arena); border-radius: 10px; padding: 15px;">
+                
+                    <div class="stat-item"><strong>Peso</strong><span>30 - 50 kg</span>
+            </div>
+        </section>
+
+        <!-- CURIOSIDAD (Fun Fact) -->
+        <div class="fun-fact" style="margin-top: auto;">
+            
+            <h3>¿Sabías qué?</h3>
+            <p>¡Come hasta 30.000 hormigas y termitas por día! Sin embargo, nunca destruye un hormiguero por completo; come un poco y se va a otro para permitir que la colonia se recupere.</p>
+        
+        </div>
+
+        <footer>ECO de América | Material Educativo Gratuito | www.ecodeamerica.org</footer>
+    </div>
+    <div class="page">
+    
+        <header><div style="font-size: 14pt; color: var(--verde-principal); font-family: var(--font-titulo); font-weight: 700;">OSO HORMIGUERO (Myrmecophaga tridactyla)</div></header>
+        <div class="grid-2">
+            <section>
+                <h2>Comportamiento</h2>
+                <p>Es generalmente solitario y puede estar activo tanto de día como de noche, dependiendo de la temperatura y la presencia humana. A pesar de parecer lento, puede galopar si es necesario. Tiene mala vista y oído, guiándose casi exclusivamente por su olfato, que es 40 veces más potente que el del ser humano.</p>
+                <p>Las madres cargan a su única cría sobre el lomo durante los primeros meses de vida, donde el pequeño se camufla alineando su franja negra con la de la madre.</p>
+            </section>
+            <!-- Detalle eliminado para optimización -->
+        </div>
+        <section>
+            <h2>Importancia Ecológica</h2>
+            <p>Es un controlador biológico natural de poblaciones de insectos sociales (hormigas y termitas). Su actividad de alimentación regula la cantidad de estos insectos, evitando que se conviertan en plagas que podrían afectar la vegetación y los cultivos.</p>
+        </section>
+        <section>
+            <h2>Amenazas Principales</h2>
+            <ul class="threats-list">
+                <li><strong>Pérdida de Hábitat:</strong> La transformación de sabanas en campos agrícolas reduce su territorio.</li>
+                <li><strong>Incendios:</strong> Su pelaje es altamente inflamable y su desplazamiento lento lo hace muy vulnerable al fuego.</li>
+                <li><strong>Atropellamientos:</strong> Es una víctima frecuente en rutas debido a su mala visión y lentitud de reacción.</li>
+            </ul>
+        </section>
+        <section style="background-color: var(--fondo-arena); padding: 15px; border-radius: 10px; border-left: 5px solid var(--verde-principal);">
+            <h2 style="border:none; padding:0; margin-bottom: 5px; color: var(--verde-principal);">Estado de Conservación</h2>
+            <p>Catalogado como Vulnerable. En algunas provincias como Córdoba y Entre Ríos se considera extinto o en situación crítica. Existen proyectos exitosos de reintroducción, como en los Esteros del Iberá, donde la especie ha vuelto a prosperar.</p>
+        </section>
+        <footer>ECO de América | Material Educativo Gratuito | www.ecodeamerica.org</footer>
+    </div>
+</div>
+</body>
+</html>

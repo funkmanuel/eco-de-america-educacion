@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verdadero o Falso</title>
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+        --verde-principal: #228b3c;
+        --verde-oscuro: #1a6b2f;
+        --verde-claro: #3db85c;
+        --fondo-arena: #f5f1e8;
+        --texto: #333333;
+        --gris: #666666;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: white;
+        color: var(--texto);
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 10mm 12mm;
+    }
+
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        font-size: 26pt;
+        color: var(--verde-oscuro);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 4mm;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 11pt;
+        color: var(--gris);
+        margin-bottom: 5mm;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 8mm;
+        left: 12mm;
+        right: 12mm;
+        text-align: center;
+        font-size: 8pt;
+        color: var(--verde-principal);
+        font-weight: 600;
+        padding-top: 2mm;
+        border-top: 1px solid #ddd;
+    }
+
+    @media print {
+        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @page { size: A4; margin: 0; }
+</style>
+
+    <style>
+        .intro { text-align: center; margin-bottom: 6mm; padding: 4mm; background: var(--fondo-arena); border-radius: 8px; font-size: 11pt; }
+        .tf-container { display: flex; flex-direction: column; gap: 4mm; }
+        .tf-item { background: var(--fondo-arena); padding: 4mm 5mm; border-radius: 8px; display: flex; align-items: center; gap: 4mm; border-left: 4px solid var(--verde-principal); }
+        .tf-number { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14pt; color: var(--verde-principal); min-width: 24px; }
+        .tf-question { flex: 1; font-size: 11pt; color: var(--texto); }
+        .tf-options { display: flex; gap: 3mm; }
+        .tf-option { width: 34px; height: 34px; border: 2px solid var(--verde-principal); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14pt; color: var(--verde-principal); background: white; }
+    </style>
+</head>
+<body>
+    <h1>¿Verdadero o Falso?</h1>
+    <div class="intro">Lee atentamente cada afirmación y marcá con una X la opción correcta.</div>
+    <div class="tf-container">
+        <div class="tf-item">
+            <div class="tf-number">1</div>
+            <div class="tf-question">El Yaguareté es el felino más grande de África.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">2</div>
+            <div class="tf-question">El Cóndor Andino puede volar a más de 6.000 metros de altura.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">3</div>
+            <div class="tf-question">El Oso Hormiguero tiene dientes muy afilados para comer.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">4</div>
+            <div class="tf-question">El Carpincho es el roedor más grande del mundo.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">5</div>
+            <div class="tf-question">Los Flamencos obtienen su color rosado de los alimentos que consumen.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">6</div>
+            <div class="tf-question">El Tapir tiene una trompa corta y rígida que no puede mover.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">7</div>
+            <div class="tf-question">La Boa Constrictora es una serpiente venenosa.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">8</div>
+            <div class="tf-question">El Hornero construye su nido usando barro y paja.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">9</div>
+            <div class="tf-question">El Yacaré Overo tiene el hocico más ancho que el Yacaré Negro.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div>
+        <div class="tf-item">
+            <div class="tf-number">10</div>
+            <div class="tf-question">El Mono Carayá es conocido por ser muy silencioso.</div>
+            <div class="tf-options">
+                <div class="tf-option">V</div>
+                <div class="tf-option">F</div>
+            </div>
+        </div></div>
+    <div class="footer">ECO de América | Material Educativo</div>
+</body>
+</html>

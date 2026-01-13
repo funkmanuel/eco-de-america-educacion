@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sopa de Letras</title>
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+        --verde-principal: #228b3c;
+        --verde-oscuro: #1a6b2f;
+        --verde-claro: #3db85c;
+        --fondo-arena: #f5f1e8;
+        --texto: #333333;
+        --gris: #666666;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: white;
+        color: var(--texto);
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 10mm 12mm;
+    }
+
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        font-size: 26pt;
+        color: var(--verde-oscuro);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 4mm;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 11pt;
+        color: var(--gris);
+        margin-bottom: 5mm;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 8mm;
+        left: 12mm;
+        right: 12mm;
+        text-align: center;
+        font-size: 8pt;
+        color: var(--verde-principal);
+        font-weight: 600;
+        padding-top: 2mm;
+        border-top: 1px solid #ddd;
+    }
+
+    @media print {
+        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @page { size: A4; margin: 0; }
+</style>
+
+    <style>
+        .content { display: flex; gap: 8mm; align-items: flex-start; }
+        .word-list { flex: 0 0 45mm; font-size: 9pt; line-height: 1.5; background: var(--fondo-arena); padding: 4mm; border-radius: 8px; }
+        .word-list h3 { font-family: 'Poppins', sans-serif; font-size: 11pt; color: var(--verde-principal); margin-bottom: 3mm; }
+        .word-list ul { list-style: none; padding: 0; margin: 0; }
+        .word-list li { margin-bottom: 2mm; padding: 1.5mm 0; border-bottom: 1px dashed #ccc; }
+        .word-list li:last-child { border-bottom: none; }
+        .grid-container { flex: 1; display: flex; justify-content: center; }
+        table { border-collapse: collapse; border: 2px solid var(--verde-principal); }
+        td { width: 8.2mm; height: 8.2mm; border: 1px solid #ddd; background: #f0f9f0; text-align: center; font-weight: 600; font-family: 'Courier New', monospace; font-size: 10pt; color: var(--texto); }
+    </style>
+</head>
+<body>
+    <h1>Sopa de Letras</h1>
+    <p class="subtitle">Encontrá los 15 animales escondidos en la grilla.</p>
+    <div class="content">
+        <div class="word-list"><h3>Animales a encontrar:</h3><ul><li><strong>ÁGUILACORONADA</strong></li><li><strong>BOACONSTRICTORA</strong></li><li><strong>CARDENAL</strong></li><li><strong>COMADREJAOVERA</strong></li><li><strong>GUACAMAYOROJO</strong></li><li><strong>HUEMUL</strong></li><li><strong>LAGARTOCOLORADO</strong></li><li><strong>JOTEREAL</strong></li><li><strong>LOROHABLADOR</strong></li><li><strong>MONOCAÍ</strong></li><li><strong>PATODETORRENTE</strong></li><li><strong>PECARÍDECOLLAR</strong></li><li><strong>TORTUGA</strong></li><li><strong>YACARÉNEGRO</strong></li><li><strong>ZORROGRIS</strong></li></ul></div>
+        <div class="grid-container"><table><tr><td>H</td><td>É</td><td>Ó</td><td>U</td><td>E</td><td>R</td><td>Z</td><td>P</td><td>Á</td><td>O</td><td>O</td><td>E</td><td>V</td><td>I</td><td>A</td><td>S</td><td>Z</td><td>M</td><td>Ñ</td><td>V</td></tr><tr><td>F</td><td>Á</td><td>M</td><td>Á</td><td>X</td><td>O</td><td>Z</td><td>R</td><td>G</td><td>P</td><td>Ú</td><td>W</td><td>X</td><td>K</td><td>Ú</td><td>C</td><td>I</td><td>É</td><td>Y</td><td>J</td></tr><tr><td>C</td><td>B</td><td>J</td><td>A</td><td>P</td><td>D</td><td>U</td><td>I</td><td>U</td><td>W</td><td>Y</td><td>Z</td><td>W</td><td>É</td><td>K</td><td>Q</td><td>O</td><td>Ó</td><td>M</td><td>C</td></tr><tr><td>X</td><td>O</td><td>N</td><td>R</td><td>U</td><td>A</td><td>Z</td><td>M</td><td>I</td><td>R</td><td>G</td><td>B</td><td>F</td><td>O</td><td>U</td><td>Í</td><td>A</td><td>K</td><td>R</td><td>Í</td></tr><tr><td>H</td><td>A</td><td>K</td><td>E</td><td>Y</td><td>L</td><td>B</td><td>L</td><td>L</td><td>Ú</td><td>D</td><td>P</td><td>Í</td><td>H</td><td>U</td><td>E</td><td>M</td><td>U</td><td>L</td><td>Á</td></tr><tr><td>L</td><td>C</td><td>B</td><td>V</td><td>S</td><td>B</td><td>R</td><td>S</td><td>A</td><td>Y</td><td>W</td><td>Í</td><td>D</td><td>Í</td><td>C</td><td>C</td><td>C</td><td>N</td><td>Á</td><td>V</td></tr><tr><td>M</td><td>O</td><td>H</td><td>O</td><td>I</td><td>A</td><td>N</td><td>T</td><td>C</td><td>R</td><td>F</td><td>Z</td><td>D</td><td>K</td><td>G</td><td>X</td><td>L</td><td>Y</td><td>J</td><td>D</td></tr><tr><td>F</td><td>N</td><td>F</td><td>A</td><td>R</td><td>H</td><td>Í</td><td>M</td><td>O</td><td>N</td><td>O</td><td>C</td><td>A</td><td>Í</td><td>U</td><td>A</td><td>C</td><td>É</td><td>B</td><td>É</td></tr><tr><td>E</td><td>S</td><td>Q</td><td>J</td><td>G</td><td>O</td><td>N</td><td>Ú</td><td>R</td><td>J</td><td>J</td><td>E</td><td>Í</td><td>G</td><td>E</td><td>D</td><td>U</td><td>N</td><td>Á</td><td>D</td></tr><tr><td>O</td><td>T</td><td>C</td><td>E</td><td>O</td><td>R</td><td>Y</td><td>I</td><td>O</td><td>F</td><td>M</td><td>Y</td><td>F</td><td>R</td><td>U</td><td>T</td><td>Q</td><td>P</td><td>R</td><td>L</td></tr><tr><td>R</td><td>R</td><td>A</td><td>R</td><td>R</td><td>O</td><td>P</td><td>T</td><td>N</td><td>Q</td><td>M</td><td>Ú</td><td>E</td><td>L</td><td>N</td><td>T</td><td>K</td><td>K</td><td>Á</td><td>K</td></tr><tr><td>G</td><td>I</td><td>R</td><td>D</td><td>R</td><td>L</td><td>Z</td><td>Ó</td><td>A</td><td>H</td><td>Ü</td><td>T</td><td>S</td><td>G</td><td>H</td><td>F</td><td>R</td><td>X</td><td>U</td><td>Í</td></tr><tr><td>E</td><td>C</td><td>D</td><td>A</td><td>O</td><td>Z</td><td>Ñ</td><td>B</td><td>D</td><td>J</td><td>O</td><td>I</td><td>W</td><td>Q</td><td>V</td><td>K</td><td>H</td><td>O</td><td>E</td><td>M</td></tr><tr><td>N</td><td>T</td><td>E</td><td>M</td><td>Z</td><td>O</td><td>G</td><td>D</td><td>A</td><td>J</td><td>É</td><td>Q</td><td>H</td><td>E</td><td>E</td><td>H</td><td>Í</td><td>X</td><td>T</td><td>C</td></tr><tr><td>É</td><td>O</td><td>N</td><td>O</td><td>S</td><td>P</td><td>K</td><td>G</td><td>K</td><td>Ó</td><td>X</td><td>T</td><td>A</td><td>T</td><td>Ü</td><td>Ó</td><td>E</td><td>O</td><td>I</td><td>G</td></tr><tr><td>R</td><td>R</td><td>A</td><td>C</td><td>U</td><td>E</td><td>E</td><td>P</td><td>É</td><td>P</td><td>C</td><td>O</td><td>X</td><td>S</td><td>L</td><td>G</td><td>X</td><td>V</td><td>Ú</td><td>I</td></tr><tr><td>A</td><td>A</td><td>L</td><td>O</td><td>D</td><td>A</td><td>R</td><td>O</td><td>L</td><td>O</td><td>C</td><td>O</td><td>T</td><td>R</td><td>A</td><td>G</td><td>A</td><td>L</td><td>A</td><td>J</td></tr><tr><td>C</td><td>R</td><td>G</td><td>Z</td><td>R</td><td>A</td><td>L</td><td>L</td><td>O</td><td>C</td><td>E</td><td>D</td><td>Í</td><td>R</td><td>A</td><td>C</td><td>E</td><td>P</td><td>R</td><td>M</td></tr><tr><td>A</td><td>M</td><td>H</td><td>O</td><td>P</td><td>A</td><td>T</td><td>O</td><td>D</td><td>E</td><td>T</td><td>O</td><td>R</td><td>R</td><td>E</td><td>N</td><td>T</td><td>E</td><td>K</td><td>P</td></tr><tr><td>Y</td><td>V</td><td>X</td><td>Ü</td><td>Ó</td><td>V</td><td>G</td><td>U</td><td>A</td><td>C</td><td>A</td><td>M</td><td>A</td><td>Y</td><td>O</td><td>R</td><td>O</td><td>J</td><td>O</td><td>U</td></tr></table></div>
+    </div>
+    <div class="footer">ECO de América | Material Educativo</div>
+</body>
+</html>

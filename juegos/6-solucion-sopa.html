@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solución - Sopa de Letras</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+      :root {
+        --verde-principal: #228b3c;
+        --verde-oscuro: #1a6b2f;
+        --verde-claro: #3db85c;
+        --fondo-arena: #f5f1e8;
+        --texto: #333333;
+        --gris: #666666;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: white;
+        color: var(--texto);
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 10mm 12mm;
+      }
+
+      h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        font-size: 26pt;
+        color: var(--verde-oscuro);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 4mm;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 11pt;
+        color: var(--gris);
+        margin-bottom: 5mm;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 8mm;
+        left: 12mm;
+        right: 12mm;
+        text-align: center;
+        font-size: 8pt;
+        color: var(--verde-principal);
+        font-weight: 600;
+        padding-top: 2mm;
+        border-top: 1px solid #ddd;
+      }
+
+      @media print {
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    </style>
+
+    <style>
+      .solution-header {
+        background: var(--verde-principal);
+        color: white;
+        padding: 3mm 5mm;
+        border-radius: 8px;
+        margin-bottom: 5mm;
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+      }
+      .solution-header h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14pt;
+        margin: 0;
+      }
+      .solution-badge {
+        background: white;
+        color: var(--verde-principal);
+        padding: 2mm 4mm;
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 10pt;
+      }
+      .grid-container {
+        display: flex;
+        justify-content: center;
+        margin: 5mm 0;
+      }
+      table {
+        border-collapse: collapse;
+        border: 2px solid var(--verde-principal);
+      }
+      td {
+        width: 8.5mm;
+        height: 8.5mm;
+        border: 1px solid #ddd;
+        background: #fafafa;
+        text-align: center;
+        font-weight: 600;
+        font-family: 'Courier New', monospace;
+        font-size: 10pt;
+        color: #999;
+      }
+      td.highlight {
+        background: #81c784 !important;
+        color: var(--verde-oscuro) !important;
+        font-weight: 700;
+      }
+      .words-found {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2mm;
+        justify-content: center;
+        margin-top: 5mm;
+        padding: 4mm;
+        background: var(--fondo-arena);
+        border-radius: 8px;
+      }
+      .word-found {
+        background: var(--verde-principal);
+        color: white;
+        padding: 2mm 4mm;
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 8pt;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Soluciones</h1>
+    <div class="solution-header">
+      <div class="solution-badge">3</div>
+      <h2>Sopa de Letras</h2>
+    </div>
+    <div class="grid-container">
+                  <table>
+        <tr>
+          <td class="">H</td>
+          <td class="">É</td>
+          <td class="">Ó</td>
+          <td class="">U</td>
+          <td class="">E</td>
+          <td class="highlight">R</td>
+          <td class="">Z</td>
+          <td class="">P</td>
+          <td class="highlight">Á</td>
+          <td class="">O</td>
+          <td class="">O</td>
+          <td class="">E</td>
+          <td class="">V</td>
+          <td class="">I</td>
+          <td class="">A</td>
+          <td class="">S</td>
+          <td class="">Z</td>
+          <td class="">M</td>
+          <td class="">Ñ</td>
+          <td class="">V</td>
+        </tr>
+        <tr>
+          <td class="">F</td>
+          <td class="">Á</td>
+          <td class="">M</td>
+          <td class="">Á</td>
+          <td class="">X</td>
+          <td class="highlight">O</td>
+          <td class="">Z</td>
+          <td class="">R</td>
+          <td class="highlight">G</td>
+          <td class="">P</td>
+          <td class="">Ú</td>
+          <td class="">W</td>
+          <td class="">X</td>
+          <td class="">K</td>
+          <td class="">Ú</td>
+          <td class="">C</td>
+          <td class="">I</td>
+          <td class="">É</td>
+          <td class="">Y</td>
+          <td class="">J</td>
+        </tr>
+        <tr>
+          <td class="">C</td>
+          <td class="highlight">B</td>
+          <td class="">J</td>
+          <td class="highlight">A</td>
+          <td class="">P</td>
+          <td class="highlight">D</td>
+          <td class="">U</td>
+          <td class="">I</td>
+          <td class="highlight">U</td>
+          <td class="">W</td>
+          <td class="">Y</td>
+          <td class="">Z</td>
+          <td class="">W</td>
+          <td class="">É</td>
+          <td class="">K</td>
+          <td class="">Q</td>
+          <td class="">O</td>
+          <td class="">Ó</td>
+          <td class="">M</td>
+          <td class="">C</td>
+        </tr>
+        <tr>
+          <td class="">X</td>
+          <td class="highlight">O</td>
+          <td class="">N</td>
+          <td class="highlight">R</td>
+          <td class="">U</td>
+          <td class="highlight">A</td>
+          <td class="">Z</td>
+          <td class="">M</td>
+          <td class="highlight">I</td>
+          <td class="">R</td>
+          <td class="">G</td>
+          <td class="">B</td>
+          <td class="">F</td>
+          <td class="">O</td>
+          <td class="">U</td>
+          <td class="">Í</td>
+          <td class="">A</td>
+          <td class="">K</td>
+          <td class="">R</td>
+          <td class="">Í</td>
+        </tr>
+        <tr>
+          <td class="">H</td>
+          <td class="highlight">A</td>
+          <td class="">K</td>
+          <td class="highlight">E</td>
+          <td class="">Y</td>
+          <td class="highlight">L</td>
+          <td class="">B</td>
+          <td class="">L</td>
+          <td class="highlight">L</td>
+          <td class="">Ú</td>
+          <td class="">D</td>
+          <td class="">P</td>
+          <td class="">Í</td>
+          <td class="highlight">H</td>
+          <td class="highlight">U</td>
+          <td class="highlight">E</td>
+          <td class="highlight">M</td>
+          <td class="highlight">U</td>
+          <td class="highlight">L</td>
+          <td class="">Á</td>
+        </tr>
+        <tr>
+          <td class="">L</td>
+          <td class="highlight">C</td>
+          <td class="">B</td>
+          <td class="highlight">V</td>
+          <td class="highlight">S</td>
+          <td class="highlight">B</td>
+          <td class="">R</td>
+          <td class="">S</td>
+          <td class="highlight">A</td>
+          <td class="">Y</td>
+          <td class="">W</td>
+          <td class="">Í</td>
+          <td class="">D</td>
+          <td class="">Í</td>
+          <td class="">C</td>
+          <td class="">C</td>
+          <td class="">C</td>
+          <td class="">N</td>
+          <td class="">Á</td>
+          <td class="">V</td>
+        </tr>
+        <tr>
+          <td class="">M</td>
+          <td class="highlight">O</td>
+          <td class="">H</td>
+          <td class="highlight">O</td>
+          <td class="highlight">I</td>
+          <td class="highlight">A</td>
+          <td class="">N</td>
+          <td class="">T</td>
+          <td class="highlight">C</td>
+          <td class="">R</td>
+          <td class="">F</td>
+          <td class="">Z</td>
+          <td class="">D</td>
+          <td class="">K</td>
+          <td class="">G</td>
+          <td class="">X</td>
+          <td class="highlight">L</td>
+          <td class="">Y</td>
+          <td class="">J</td>
+          <td class="">D</td>
+        </tr>
+        <tr>
+          <td class="">F</td>
+          <td class="highlight">N</td>
+          <td class="">F</td>
+          <td class="highlight">A</td>
+          <td class="highlight">R</td>
+          <td class="highlight">H</td>
+          <td class="">Í</td>
+          <td class="highlight">M</td>
+          <td class="highlight">O</td>
+          <td class="highlight">N</td>
+          <td class="highlight">O</td>
+          <td class="highlight">C</td>
+          <td class="highlight">A</td>
+          <td class="highlight">Í</td>
+          <td class="">U</td>
+          <td class="highlight">A</td>
+          <td class="">C</td>
+          <td class="">É</td>
+          <td class="">B</td>
+          <td class="">É</td>
+        </tr>
+        <tr>
+          <td class="">E</td>
+          <td class="highlight">S</td>
+          <td class="">Q</td>
+          <td class="highlight">J</td>
+          <td class="highlight">G</td>
+          <td class="highlight">O</td>
+          <td class="">N</td>
+          <td class="">Ú</td>
+          <td class="highlight">R</td>
+          <td class="">J</td>
+          <td class="">J</td>
+          <td class="">E</td>
+          <td class="">Í</td>
+          <td class="highlight">G</td>
+          <td class="highlight">E</td>
+          <td class="">D</td>
+          <td class="">U</td>
+          <td class="">N</td>
+          <td class="">Á</td>
+          <td class="">D</td>
+        </tr>
+        <tr>
+          <td class="highlight">O</td>
+          <td class="highlight">T</td>
+          <td class="highlight">C</td>
+          <td class="highlight">E</td>
+          <td class="highlight">O</td>
+          <td class="highlight">R</td>
+          <td class="">Y</td>
+          <td class="">I</td>
+          <td class="highlight">O</td>
+          <td class="">F</td>
+          <td class="">M</td>
+          <td class="">Y</td>
+          <td class="">F</td>
+          <td class="highlight">R</td>
+          <td class="highlight">U</td>
+          <td class="">T</td>
+          <td class="">Q</td>
+          <td class="">P</td>
+          <td class="">R</td>
+          <td class="">L</td>
+        </tr>
+        <tr>
+          <td class="highlight">R</td>
+          <td class="highlight">R</td>
+          <td class="highlight">A</td>
+          <td class="highlight">R</td>
+          <td class="highlight">R</td>
+          <td class="highlight">O</td>
+          <td class="">P</td>
+          <td class="">T</td>
+          <td class="highlight">N</td>
+          <td class="">Q</td>
+          <td class="">M</td>
+          <td class="">Ú</td>
+          <td class="highlight">E</td>
+          <td class="">L</td>
+          <td class="">N</td>
+          <td class="highlight">T</td>
+          <td class="">K</td>
+          <td class="">K</td>
+          <td class="">Á</td>
+          <td class="">K</td>
+        </tr>
+        <tr>
+          <td class="highlight">G</td>
+          <td class="highlight">I</td>
+          <td class="highlight">R</td>
+          <td class="highlight">D</td>
+          <td class="highlight">R</td>
+          <td class="highlight">L</td>
+          <td class="">Z</td>
+          <td class="">Ó</td>
+          <td class="highlight">A</td>
+          <td class="">H</td>
+          <td class="">Ü</td>
+          <td class="highlight">T</td>
+          <td class="">S</td>
+          <td class="">G</td>
+          <td class="">H</td>
+          <td class="">F</td>
+          <td class="highlight">R</td>
+          <td class="">X</td>
+          <td class="">U</td>
+          <td class="">Í</td>
+        </tr>
+        <tr>
+          <td class="highlight">E</td>
+          <td class="highlight">C</td>
+          <td class="highlight">D</td>
+          <td class="highlight">A</td>
+          <td class="highlight">O</td>
+          <td class="">Z</td>
+          <td class="">Ñ</td>
+          <td class="">B</td>
+          <td class="highlight">D</td>
+          <td class="">J</td>
+          <td class="highlight">O</td>
+          <td class="">I</td>
+          <td class="">W</td>
+          <td class="">Q</td>
+          <td class="">V</td>
+          <td class="">K</td>
+          <td class="">H</td>
+          <td class="highlight">O</td>
+          <td class="">E</td>
+          <td class="">M</td>
+        </tr>
+        <tr>
+          <td class="highlight">N</td>
+          <td class="highlight">T</td>
+          <td class="highlight">E</td>
+          <td class="highlight">M</td>
+          <td class="highlight">Z</td>
+          <td class="">O</td>
+          <td class="">G</td>
+          <td class="">D</td>
+          <td class="highlight">A</td>
+          <td class="highlight">J</td>
+          <td class="">É</td>
+          <td class="">Q</td>
+          <td class="">H</td>
+          <td class="">E</td>
+          <td class="">E</td>
+          <td class="">H</td>
+          <td class="">Í</td>
+          <td class="">X</td>
+          <td class="highlight">T</td>
+          <td class="">C</td>
+        </tr>
+        <tr>
+          <td class="highlight">É</td>
+          <td class="highlight">O</td>
+          <td class="highlight">N</td>
+          <td class="highlight">O</td>
+          <td class="">S</td>
+          <td class="">P</td>
+          <td class="">K</td>
+          <td class="">G</td>
+          <td class="">K</td>
+          <td class="">Ó</td>
+          <td class="">X</td>
+          <td class="">T</td>
+          <td class="">A</td>
+          <td class="">T</td>
+          <td class="">Ü</td>
+          <td class="">Ó</td>
+          <td class="">E</td>
+          <td class="">O</td>
+          <td class="">I</td>
+          <td class="">G</td>
+        </tr>
+        <tr>
+          <td class="highlight">R</td>
+          <td class="highlight">R</td>
+          <td class="highlight">A</td>
+          <td class="highlight">C</td>
+          <td class="">U</td>
+          <td class="">E</td>
+          <td class="">E</td>
+          <td class="">P</td>
+          <td class="">É</td>
+          <td class="">P</td>
+          <td class="">C</td>
+          <td class="">O</td>
+          <td class="">X</td>
+          <td class="">S</td>
+          <td class="">L</td>
+          <td class="">G</td>
+          <td class="">X</td>
+          <td class="">V</td>
+          <td class="">Ú</td>
+          <td class="">I</td>
+        </tr>
+        <tr>
+          <td class="highlight">A</td>
+          <td class="highlight">A</td>
+          <td class="highlight">L</td>
+          <td class="highlight">O</td>
+          <td class="highlight">D</td>
+          <td class="highlight">A</td>
+          <td class="highlight">R</td>
+          <td class="highlight">O</td>
+          <td class="highlight">L</td>
+          <td class="highlight">O</td>
+          <td class="highlight">C</td>
+          <td class="highlight">O</td>
+          <td class="highlight">T</td>
+          <td class="highlight">R</td>
+          <td class="highlight">A</td>
+          <td class="highlight">G</td>
+          <td class="highlight">A</td>
+          <td class="highlight">L</td>
+          <td class="">A</td>
+          <td class="">J</td>
+        </tr>
+        <tr>
+          <td class="highlight">C</td>
+          <td class="">R</td>
+          <td class="">G</td>
+          <td class="">Z</td>
+          <td class="highlight">R</td>
+          <td class="highlight">A</td>
+          <td class="highlight">L</td>
+          <td class="highlight">L</td>
+          <td class="highlight">O</td>
+          <td class="highlight">C</td>
+          <td class="highlight">E</td>
+          <td class="highlight">D</td>
+          <td class="highlight">Í</td>
+          <td class="highlight">R</td>
+          <td class="highlight">A</td>
+          <td class="highlight">C</td>
+          <td class="highlight">E</td>
+          <td class="highlight">P</td>
+          <td class="">R</td>
+          <td class="">M</td>
+        </tr>
+        <tr>
+          <td class="highlight">A</td>
+          <td class="">M</td>
+          <td class="">H</td>
+          <td class="">O</td>
+          <td class="highlight">P</td>
+          <td class="highlight">A</td>
+          <td class="highlight">T</td>
+          <td class="highlight">O</td>
+          <td class="highlight">D</td>
+          <td class="highlight">E</td>
+          <td class="highlight">T</td>
+          <td class="highlight">O</td>
+          <td class="highlight">R</td>
+          <td class="highlight">R</td>
+          <td class="highlight">E</td>
+          <td class="highlight">N</td>
+          <td class="highlight">T</td>
+          <td class="highlight">E</td>
+          <td class="">K</td>
+          <td class="">P</td>
+        </tr>
+        <tr>
+          <td class="highlight">Y</td>
+          <td class="">V</td>
+          <td class="">X</td>
+          <td class="">Ü</td>
+          <td class="">Ó</td>
+          <td class="">V</td>
+          <td class="highlight">G</td>
+          <td class="highlight">U</td>
+          <td class="highlight">A</td>
+          <td class="highlight">C</td>
+          <td class="highlight">A</td>
+          <td class="highlight">M</td>
+          <td class="highlight">A</td>
+          <td class="highlight">Y</td>
+          <td class="highlight">O</td>
+          <td class="highlight">R</td>
+          <td class="highlight">O</td>
+          <td class="highlight">J</td>
+          <td class="highlight">O</td>
+          <td class="">U</td>
+        </tr>
+      </table>
+    </div>
+    <div class="words-found">
+      <span class="word-found">ÁGUILACORONADA</span
+      ><span class="word-found">BOACONSTRICTORA</span
+      ><span class="word-found">CARDENAL</span
+      ><span class="word-found">COMADREJAOVERA</span
+      ><span class="word-found">GUACAMAYOROJO</span
+      ><span class="word-found">HUEMUL</span
+      ><span class="word-found">LAGARTOCOLORADO</span
+      ><span class="word-found">JOTEREAL</span
+      ><span class="word-found">LOROHABLADOR</span
+      ><span class="word-found">MONOCAÍ</span
+      ><span class="word-found">PATODETORRENTE</span
+      ><span class="word-found">PECARÍDECOLLAR</span
+      ><span class="word-found">TORTUGA</span
+      ><span class="word-found">YACARÉNEGRO</span
+      ><span class="word-found">ZORROGRIS</span>
+    </div>
+    <div class="footer">ECO de América | Material Educativo</div>
+  </body>
+</html>

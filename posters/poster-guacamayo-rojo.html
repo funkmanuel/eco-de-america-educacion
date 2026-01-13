@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster: Guacamayo Rojo - ECO de América</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --verde: #228b3c; --fondo: #f5f1e8; --lc: #10b981; --font-t: 'Poppins', sans-serif; --font-b: 'Inter', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100%; width: 100%; background: white; }
+
+        /* Contenedor Principal A3 Flex */
+        .poster-container {
+            width: 297mm;
+            height: 419mm;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            background: white;
+        }
+
+        /* Header (Fijo arriba) */
+        .header {
+            flex: 0 0 auto;
+            background: var(--verde);
+            padding: 15mm 15mm 5mm 15mm;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            z-index: 20;
+        }
+        h1 { font-family: var(--font-t); font-size: 55pt; line-height: 0.9; text-transform: uppercase; }
+        .sci-name { font-size: 20pt; font-style: italic; opacity: 0.9; font-family: var(--font-b); }
+
+        /* Contenido (Cuerpo central) */
+        .content {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Imagen (El rey del poster) */
+        .image-container {
+            flex: 1 1 auto;
+            height: 0;
+            margin: 0 15mm 15px 15mm;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 15px;
+        }
+
+        .conservation-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--lc);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: var(--font-t);
+            font-size: 16pt;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        /* Footer Info (Fijo abajo) */
+        .footer-info {
+            flex: 0 0 auto;
+            padding: 0 15mm 15mm 15mm;
+            background: white;
+            z-index: 20;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .info-card {
+            background: var(--fondo);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border-bottom: 4px solid var(--verde);
+        }
+        .info-card strong { display: block; color: var(--verde); font-family: var(--font-t); font-size: 12pt; }
+        .info-card span { font-size: 16pt; font-weight: 600; color: #333; font-family: var(--font-b); }
+
+        .did-you-know {
+            background: #222;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .did-you-know h3 { font-family: var(--font-t); font-size: 20pt; color: #facc15; white-space: nowrap; }
+        .did-you-know p { font-size: 12pt; line-height: 1.3; font-family: var(--font-b); }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="poster-container">
+        <header class="header">
+            <h1>Guacamayo Rojo</h1>
+            <div class="sci-name">Ara chloropterus</div>
+        </header>
+
+        <div class="content">
+            <div class="image-container">
+                <div class="conservation-badge">PREOCUPACIÓN MENOR (LC)</div>
+                <img src="../img/realistas/guacamayo-rojo-principal.png" alt="Guacamayo Rojo">
+            </div>
+
+            <div class="footer-info">
+                <div class="info-grid">
+                <div class="info-card"><strong>HÁBITAT</strong><span>Selvas Tropicales</span></div>
+                <div class="info-card"><strong>DIETA</strong><span>Frutas y Semillas</span></div>
+                <div class="info-card"><strong>TAMAÑO</strong><span>90 - 95 cm</span></div>
+            </div>
+            <div class="did-you-know">
+                <h3>¿SABÍAS QUÉ?</h3>
+                <p>¡Comen arcilla! Los Guacamayos Rojos visitan lamederos de arcilla en los ríos para neutralizar las toxinas de los frutos que consumen.</p>
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
