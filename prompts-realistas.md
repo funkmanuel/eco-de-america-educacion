@@ -125,10 +125,10 @@
 
 ---
 
-### 18. MONO CAÍ (*Sapajus nigritus*)
+### 18. MONO CAÍ (*Sapajus apella*)
 
 - **Principal:** `img/realistas/mono-cai-principal.png`
-  **Prompt:** `Documentary wildlife photography, photorealistic raw photo, Sony A1, 600mm f/4 GM, 1/2000s, f/4, ISO auto, natural color science, realistic depth of field, ultra-detailed fur/feathers/scales, 8k, National Geographic field photo aesthetic, no CGI, no illustration. Black Capuchin (Sapajus nigritus) hanging from a liana by its tail, holding a wild fruit, intelligent expression, dense rainforest background.`
+  **Prompt:** `Documentary wildlife photography, photorealistic raw photo, Sony A1, 600mm f/4 GM, 1/2000s, f/4, ISO auto, natural color science, realistic depth of field, ultra-detailed fur/feathers/scales, 8k, National Geographic field photo aesthetic, no CGI, no illustration. Tufted Capuchin (Sapajus apella) hanging from a liana by its tail, holding a wild fruit, intelligent expression, dense rainforest background.`
 
 ---
 

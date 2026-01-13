@@ -58,21 +58,23 @@ async function createActividadesPdf(coverPath) {
         await page.close();
     }
 
-    // 2. Markdown Activities (Restored)
+    // 2. Markdown Activities (flujo continuo)
     const styles = `
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap');
-            body { font-family: 'Inter', sans-serif; color: #333; margin: 0; background: #f4f4f9; }
-            .content-wrapper { padding: 15mm; max-width: 210mm; margin: 0 auto; background: white; min-height: 297mm; box-sizing: border-box; }
-            h1 { font-family: 'Poppins', sans-serif; color: #1a6b2f; font-size: 24pt; border-bottom: 3px solid #228b3c; padding-bottom: 10px; margin-top: 0; text-transform: uppercase; }
-            h2 { font-family: 'Poppins', sans-serif; color: #228b3c; font-size: 18pt; margin-top: 30px; }
-            h3 { font-family: 'Poppins', sans-serif; color: #fff; background: #228b3c; padding: 8px 15px; border-radius: 6px; font-size: 14pt; margin-top: 25px; display: inline-block; }
-            table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 15px; }
-            th { background: #1a6b2f; color: white; padding: 12px; text-align: left; }
-            td { border-bottom: 1px solid #eee; padding: 10px; }
-            li { margin-bottom: 5px; }
+            body { font-family: 'Inter', sans-serif; color: #333; margin: 0; background: white; padding: 12mm 15mm; }
+            h1 { font-family: 'Poppins', sans-serif; color: #1a6b2f; font-size: 20pt; border-bottom: 3px solid #228b3c; padding-bottom: 8px; margin-top: 0; margin-bottom: 15px; text-transform: uppercase; page-break-before: always; }
+            h1:first-of-type { page-break-before: avoid; }
+            h2 { font-family: 'Poppins', sans-serif; color: #228b3c; font-size: 14pt; margin-top: 20px; margin-bottom: 10px; }
+            h3 { font-family: 'Poppins', sans-serif; color: #fff; background: #228b3c; padding: 5px 12px; border-radius: 5px; font-size: 11pt; margin-top: 15px; margin-bottom: 8px; display: inline-block; }
+            p { font-size: 10pt; line-height: 1.4; margin: 8px 0; }
+            table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin: 10px 0; font-size: 9pt; }
+            th { background: #1a6b2f; color: white; padding: 8px 10px; text-align: left; font-size: 9pt; }
+            td { border-bottom: 1px solid #eee; padding: 6px 10px; }
+            ul, ol { margin: 8px 0; padding-left: 20px; font-size: 10pt; }
+            li { margin-bottom: 3px; line-height: 1.3; }
             li::marker { color: #228b3c; font-weight: bold; }
-            hr { page-break-after: always; visibility: hidden; }
+            hr { border: none; border-top: 1px dashed #ccc; margin: 15px 0; }
         </style>
     `;
 
@@ -80,7 +82,7 @@ async function createActividadesPdf(coverPath) {
     let combinedHtml = "";
     for (const file of files) {
         const rawMd = fs.readFileSync(path.join('kit_docente', file), 'utf8');
-        combinedHtml += `<div class="content-wrapper">${md.render(rawMd)}</div><div style="page-break-after: always;"></div>`;
+        combinedHtml += md.render(rawMd);
     }
 
     if (combinedHtml) {

@@ -54,7 +54,7 @@ Este documento define los agentes especializados para crear materiales educativo
 7. Coatí (_Nasua nasua_) - LC
 8. Mara Patagónica (_Dolichotis patagonum_) - NT
 9. Pecarí de Collar (_Pecari tajacu_) - LC
-10. Mono Caí (_Sapajus nigritus_) - NT
+10. Mono Caí (_Sapajus apella_) - LC
 11. Mono Carayá (_Alouatta caraya_) - NT
 12. Ciervo de los Pantanos (_Blastocerus dichotomus_) - VU
 13. Huemul (_Hippocamelus bisulcus_) - EN
