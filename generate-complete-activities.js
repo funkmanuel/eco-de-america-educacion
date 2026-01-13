@@ -351,15 +351,15 @@ function generateCrosswordSolutionPage() {
 function generateTrueFalseSolutionPage() {
     let solutionsHTML = '';
     trueFalseQuestions.forEach((item, index) => {
-        const answer = item.a ? 'VERDADERO' : 'FALSO';
+        const answer = item.a ? 'V' : 'F';
         const answerClass = item.a ? 'correct' : 'incorrect';
         solutionsHTML += `
         <div class="sol-item">
             <div class="sol-number">${index + 1}</div>
+            <div class="sol-answer ${answerClass}">${answer}</div>
             <div class="sol-content">
-                <div class="sol-question">${item.q}</div>
-                <div class="sol-answer ${answerClass}">${answer}</div>
-                <div class="sol-explanation">${item.why}</div>
+                <span class="sol-question">${item.q}</span>
+                <span class="sol-explanation">— ${item.why}</span>
             </div>
         </div>`;
     });
@@ -374,24 +374,24 @@ function generateTrueFalseSolutionPage() {
         .solution-header {
             background: var(--verde-principal);
             color: white;
-            padding: 3mm 5mm;
+            padding: 2.5mm 5mm;
             border-radius: 8px;
-            margin-bottom: 5mm;
+            margin-bottom: 4mm;
             display: flex;
             align-items: center;
             gap: 3mm;
         }
-        .solution-header h2 { font-family: 'Poppins', sans-serif; font-size: 14pt; margin: 0; }
-        .solution-badge { background: white; color: var(--verde-principal); padding: 2mm 4mm; border-radius: 4px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 10pt; }
-        .solutions-container { display: flex; flex-direction: column; gap: 3mm; }
-        .sol-item { background: var(--fondo-arena); padding: 4mm; border-radius: 8px; display: flex; gap: 4mm; align-items: flex-start; }
-        .sol-number { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16pt; color: var(--verde-principal); min-width: 28px; }
-        .sol-content { flex: 1; }
-        .sol-question { font-size: 10pt; color: var(--texto); margin-bottom: 2mm; }
-        .sol-answer { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 12pt; display: inline-block; padding: 1mm 3mm; border-radius: 4px; }
+        .solution-header h2 { font-family: 'Poppins', sans-serif; font-size: 13pt; margin: 0; }
+        .solution-badge { background: white; color: var(--verde-principal); padding: 1.5mm 3mm; border-radius: 4px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 9pt; }
+        .solutions-container { display: flex; flex-direction: column; gap: 2mm; }
+        .sol-item { background: var(--fondo-arena); padding: 2.5mm 3mm; border-radius: 6px; display: flex; gap: 3mm; align-items: center; }
+        .sol-number { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 11pt; color: var(--verde-principal); min-width: 18px; text-align: center; }
+        .sol-answer { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 11pt; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; border-radius: 4px; flex-shrink: 0; }
         .sol-answer.correct { background: #c8e6c9; color: #2e7d32; }
         .sol-answer.incorrect { background: #ffcdd2; color: #c62828; }
-        .sol-explanation { font-size: 9pt; color: var(--gris); margin-top: 2mm; font-style: italic; }
+        .sol-content { flex: 1; font-size: 9pt; line-height: 1.3; }
+        .sol-question { color: var(--texto); }
+        .sol-explanation { color: var(--gris); font-style: italic; }
     </style>
 </head>
 <body>

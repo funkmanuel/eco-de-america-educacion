@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Solución - Verdadero o Falso</title>
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
-
-      :root {
+    :root {
         --verde-principal: #228b3c;
         --verde-oscuro: #1a6b2f;
         --verde-claro: #3db85c;
         --fondo-arena: #f5f1e8;
         --texto: #333333;
         --gris: #666666;
-      }
+    }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      body {
+    body {
         font-family: 'Inter', sans-serif;
         background: white;
         color: var(--texto);
@@ -30,9 +26,9 @@
         min-height: 297mm;
         margin: 0;
         padding: 10mm 12mm;
-      }
+    }
 
-      h1 {
+    h1 {
         font-family: 'Poppins', sans-serif;
         font-weight: 800;
         font-size: 26pt;
@@ -40,16 +36,16 @@
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 4mm;
-      }
+    }
 
-      .subtitle {
+    .subtitle {
         text-align: center;
         font-size: 11pt;
         color: var(--gris);
         margin-bottom: 5mm;
-      }
+    }
 
-      .footer {
+    .footer {
         position: fixed;
         bottom: 8mm;
         left: 12mm;
@@ -60,215 +56,126 @@
         font-weight: 600;
         padding-top: 2mm;
         border-top: 1px solid #ddd;
-      }
+    }
 
-      @media print {
-        body {
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-      }
+    @media print {
+        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
 
-      @page {
-        size: A4;
-        margin: 0;
-      }
-    </style>
+    @page { size: A4; margin: 0; }
+</style>
 
     <style>
-      .solution-header {
-        background: var(--verde-principal);
-        color: white;
-        padding: 3mm 5mm;
-        border-radius: 8px;
-        margin-bottom: 5mm;
-        display: flex;
-        align-items: center;
-        gap: 3mm;
-      }
-      .solution-header h2 {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14pt;
-        margin: 0;
-      }
-      .solution-badge {
-        background: white;
-        color: var(--verde-principal);
-        padding: 2mm 4mm;
-        border-radius: 4px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 10pt;
-      }
-      .solutions-container {
-        display: flex;
-        flex-direction: column;
-        gap: 3mm;
-      }
-      .sol-item {
-        background: var(--fondo-arena);
-        padding: 4mm;
-        border-radius: 8px;
-        display: flex;
-        gap: 4mm;
-        align-items: flex-start;
-      }
-      .sol-number {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 16pt;
-        color: var(--verde-principal);
-        min-width: 28px;
-      }
-      .sol-content {
-        flex: 1;
-      }
-      .sol-question {
-        font-size: 10pt;
-        color: var(--texto);
-        margin-bottom: 2mm;
-      }
-      .sol-answer {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 12pt;
-        display: inline-block;
-        padding: 1mm 3mm;
-        border-radius: 4px;
-      }
-      .sol-answer.correct {
-        background: #c8e6c9;
-        color: #2e7d32;
-      }
-      .sol-answer.incorrect {
-        background: #ffcdd2;
-        color: #c62828;
-      }
-      .sol-explanation {
-        font-size: 9pt;
-        color: var(--gris);
-        margin-top: 2mm;
-        font-style: italic;
-      }
+        .solution-header {
+            background: var(--verde-principal);
+            color: white;
+            padding: 2.5mm 5mm;
+            border-radius: 8px;
+            margin-bottom: 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+        .solution-header h2 { font-family: 'Poppins', sans-serif; font-size: 13pt; margin: 0; }
+        .solution-badge { background: white; color: var(--verde-principal); padding: 1.5mm 3mm; border-radius: 4px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 9pt; }
+        .solutions-container { display: flex; flex-direction: column; gap: 2mm; }
+        .sol-item { background: var(--fondo-arena); padding: 2.5mm 3mm; border-radius: 6px; display: flex; gap: 3mm; align-items: center; }
+        .sol-number { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 11pt; color: var(--verde-principal); min-width: 18px; text-align: center; }
+        .sol-answer { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 11pt; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; border-radius: 4px; flex-shrink: 0; }
+        .sol-answer.correct { background: #c8e6c9; color: #2e7d32; }
+        .sol-answer.incorrect { background: #ffcdd2; color: #c62828; }
+        .sol-content { flex: 1; font-size: 9pt; line-height: 1.3; }
+        .sol-question { color: var(--texto); }
+        .sol-explanation { color: var(--gris); font-style: italic; }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <h1>Soluciones</h1>
     <div class="solution-header">
-      <div class="solution-badge">2</div>
-      <h2>Verdadero o Falso</h2>
+        <div class="solution-badge">2</div>
+        <h2>Verdadero o Falso</h2>
     </div>
     <div class="solutions-container">
-      <div class="sol-item">
-        <div class="sol-number">1</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Yaguareté es el felino más grande de África.
-          </div>
-          <div class="sol-answer incorrect">FALSO</div>
-          <div class="sol-explanation">Es el felino más grande de América.</div>
+        <div class="sol-item">
+            <div class="sol-number">1</div>
+            <div class="sol-answer incorrect">F</div>
+            <div class="sol-content">
+                <span class="sol-question">El Yaguareté es el felino más grande de África.</span>
+                <span class="sol-explanation">— Es el felino más grande de América.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">2</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Cóndor Andino puede volar a más de 6.000 metros de altura.
-          </div>
-          <div class="sol-answer correct">VERDADERO</div>
-          <div class="sol-explanation">Verdadero.</div>
+        <div class="sol-item">
+            <div class="sol-number">2</div>
+            <div class="sol-answer correct">V</div>
+            <div class="sol-content">
+                <span class="sol-question">El Cóndor Andino puede volar a más de 6.000 metros de altura.</span>
+                <span class="sol-explanation">— Verdadero.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">3</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Oso Hormiguero tiene dientes muy afilados para comer.
-          </div>
-          <div class="sol-answer incorrect">FALSO</div>
-          <div class="sol-explanation">
-            No tiene dientes, usa su lengua pegajosa.
-          </div>
+        <div class="sol-item">
+            <div class="sol-number">3</div>
+            <div class="sol-answer incorrect">F</div>
+            <div class="sol-content">
+                <span class="sol-question">El Oso Hormiguero tiene dientes muy afilados para comer.</span>
+                <span class="sol-explanation">— No tiene dientes, usa su lengua pegajosa.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">4</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Carpincho es el roedor más grande del mundo.
-          </div>
-          <div class="sol-answer correct">VERDADERO</div>
-          <div class="sol-explanation">Verdadero.</div>
+        <div class="sol-item">
+            <div class="sol-number">4</div>
+            <div class="sol-answer correct">V</div>
+            <div class="sol-content">
+                <span class="sol-question">El Carpincho es el roedor más grande del mundo.</span>
+                <span class="sol-explanation">— Verdadero.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">5</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            Los Flamencos obtienen su color rosado de los alimentos que
-            consumen.
-          </div>
-          <div class="sol-answer correct">VERDADERO</div>
-          <div class="sol-explanation">Verdadero.</div>
+        <div class="sol-item">
+            <div class="sol-number">5</div>
+            <div class="sol-answer correct">V</div>
+            <div class="sol-content">
+                <span class="sol-question">Los Flamencos obtienen su color rosado de los alimentos que consumen.</span>
+                <span class="sol-explanation">— Verdadero.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">6</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Tapir tiene una trompa corta y rígida que no puede mover.
-          </div>
-          <div class="sol-answer incorrect">FALSO</div>
-          <div class="sol-explanation">
-            Su trompa es carnosa y muy flexible.
-          </div>
+        <div class="sol-item">
+            <div class="sol-number">6</div>
+            <div class="sol-answer incorrect">F</div>
+            <div class="sol-content">
+                <span class="sol-question">El Tapir tiene una trompa corta y rígida que no puede mover.</span>
+                <span class="sol-explanation">— Su trompa es carnosa y muy flexible.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">7</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            La Boa Constrictora es una serpiente venenosa.
-          </div>
-          <div class="sol-answer incorrect">FALSO</div>
-          <div class="sol-explanation">
-            Mata por constricción, no tiene veneno.
-          </div>
+        <div class="sol-item">
+            <div class="sol-number">7</div>
+            <div class="sol-answer incorrect">F</div>
+            <div class="sol-content">
+                <span class="sol-question">La Boa Constrictora es una serpiente venenosa.</span>
+                <span class="sol-explanation">— Mata por constricción, no tiene veneno.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">8</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Hornero construye su nido usando barro y paja.
-          </div>
-          <div class="sol-answer correct">VERDADERO</div>
-          <div class="sol-explanation">Verdadero.</div>
+        <div class="sol-item">
+            <div class="sol-number">8</div>
+            <div class="sol-answer correct">V</div>
+            <div class="sol-content">
+                <span class="sol-question">El Hornero construye su nido usando barro y paja.</span>
+                <span class="sol-explanation">— Verdadero.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">9</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Yacaré Overo tiene el hocico más ancho que el Yacaré Negro.
-          </div>
-          <div class="sol-answer correct">VERDADERO</div>
-          <div class="sol-explanation">Verdadero.</div>
+        <div class="sol-item">
+            <div class="sol-number">9</div>
+            <div class="sol-answer correct">V</div>
+            <div class="sol-content">
+                <span class="sol-question">El Yacaré Overo tiene el hocico más ancho que el Yacaré Negro.</span>
+                <span class="sol-explanation">— Verdadero.</span>
+            </div>
         </div>
-      </div>
-      <div class="sol-item">
-        <div class="sol-number">10</div>
-        <div class="sol-content">
-          <div class="sol-question">
-            El Mono Carayá es conocido por ser muy silencioso.
-          </div>
-          <div class="sol-answer incorrect">FALSO</div>
-          <div class="sol-explanation">
-            Es uno de los animales más ruidosos.
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="sol-item">
+            <div class="sol-number">10</div>
+            <div class="sol-answer incorrect">F</div>
+            <div class="sol-content">
+                <span class="sol-question">El Mono Carayá es conocido por ser muy silencioso.</span>
+                <span class="sol-explanation">— Es uno de los animales más ruidosos.</span>
+            </div>
+        </div></div>
     <div class="footer">ECO de América | Material Educativo</div>
-  </body>
+</body>
 </html>
